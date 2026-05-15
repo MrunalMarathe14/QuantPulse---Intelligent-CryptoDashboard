@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Database
+data/crypto.db
+data/pipeline.log
+
+# ML model (if large)
+ml/crypto_prediction_model.pkl
+
+# VS Code
+.vscode/
+
+# Environment / secrets
+.env
+secrets.py
+config.py

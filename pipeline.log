@@ -1,0 +1,42 @@
+2026-05-15 02:36:20,453 - INFO - === Pipeline started ===
+2026-05-15 02:36:20,454 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 02:36:22,546 - INFO - Successfully fetched 100 coins.
+2026-05-15 02:36:22,662 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 02:36:22,806 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 02:36:22,818 - INFO - === Pipeline complete ===
+2026-05-15 02:51:23,066 - INFO - === Pipeline started ===
+2026-05-15 02:51:23,069 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 02:51:25,476 - INFO - Successfully fetched 100 coins.
+2026-05-15 02:51:25,501 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 02:51:25,552 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 02:51:25,554 - INFO - === Pipeline complete ===
+2026-05-15 02:57:14,471 - INFO - === Pipeline started ===
+2026-05-15 02:57:14,477 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 02:57:16,746 - INFO - Successfully fetched 100 coins.
+2026-05-15 02:57:16,890 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 02:57:16,962 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 02:57:16,966 - INFO - === Pipeline complete ===
+2026-05-15 03:00:29,829 - INFO - === Pipeline started ===
+2026-05-15 03:00:29,830 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 03:00:31,672 - INFO - Successfully fetched 100 coins.
+2026-05-15 03:00:31,689 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 03:00:31,737 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 03:00:31,737 - INFO - === Pipeline complete ===
+2026-05-15 04:34:09,433 - INFO - === Pipeline started ===
+2026-05-15 04:34:09,437 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 04:34:11,530 - INFO - Successfully fetched 100 coins.
+2026-05-15 04:34:11,592 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 04:34:11,628 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 04:34:11,631 - INFO - === Pipeline complete ===
+2026-05-15 05:25:42,718 - INFO - === Pipeline started ===
+2026-05-15 05:25:42,721 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 05:25:44,646 - INFO - Successfully fetched 100 coins.
+2026-05-15 05:25:44,663 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 05:25:44,699 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 05:25:44,704 - INFO - === Pipeline complete ===
+2026-05-15 05:25:49,018 - INFO - === Pipeline started ===
+2026-05-15 05:25:49,018 - INFO - Fetching data for top 100 coins from CoinGecko API...
+2026-05-15 05:25:50,592 - INFO - Successfully fetched 100 coins.
+2026-05-15 05:25:50,609 - INFO - Parsed DataFrame: 100 rows, 15 columns
+2026-05-15 05:25:50,652 - INFO - Stored 100 records to data/crypto.db
+2026-05-15 05:25:50,653 - INFO - === Pipeline complete ===
