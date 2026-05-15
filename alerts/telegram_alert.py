@@ -1,7 +1,11 @@
 # alerts/telegram_alert.py
+import os
+from dotenv import load_dotenv
+
+
 
 import requests
-
+load_dotenv()
 BOT_TOKEN = "8968102799:AAFUg3qCRa7-WjK6xICUadq1WlfmHpxj0-I"
 CHAT_ID = "1188460670"
 
