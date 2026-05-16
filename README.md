@@ -1,88 +1,158 @@
-# 📊 Crypto Market Intelligence Dashboard
+# QuantPulse — Intelligent CryptoDashboard 📊
 
-> **Problem**: Manually tracking crypto market movements across 100+ coins is slow, error-prone, and doesn't scale.
-> **Solution**: An automated pipeline that fetches live data via API, stores it in SQL, and visualizes it in an interactive dashboard.
-> **Result**: Zero manual effort — data refreshes every 15 minutes with full historical tracking.
+A real-time cryptocurrency intelligence platform with sentiment analysis, automated alerts, SQL-powered market analytics, and an experimental ML prediction module.
 
 ---
 
-## Live Preview
+## 🚀 Features
 
-![Dashboard Overview](screenshots/dashboard_overview.png)
-
----
-
-## Tech Stack
-
-| Layer | Tool |
-|-------|------|
-| Data Source | CoinGecko REST API |
-| Storage | SQLite (via Python sqlite3) |
-| Processing | Python, Pandas |
-| SQL Analysis | SQLite queries |
-| Dashboard | Streamlit + Plotly |
-| Scheduling | APScheduler |
+- **Real-Time Data Pipeline** — Fetches live crypto market data and stores it in a local SQLite database
+- **Sentiment Analysis** — Analyzes market sentiment and stores results for trend tracking
+- **Automated Alerts** — Email and Telegram notifications triggered by market conditions
+- **SQL Analytics** — Pre-built queries for BTC dominance and market overview dashboards
+- **ML Prediction (WIP)** — Experimental XGBoost-based price prediction module planned for future enhancement
+- **Modular Architecture** — Clean separation of concerns across alerts, analytics, data, and ML modules
 
 ---
 
-## Features
+## 🗂️ Project Structure
 
-- **Live API Fetching** — Pulls top 100 coins by market cap from CoinGecko
-- **SQL Analytics** — 5+ queries: top gainers/losers, volume analysis, BTC dominance, volatility ranking
-- **Interactive Dashboard** — 4 tabs with charts, treemaps, scatter plots, and KPI cards
-- **Auto-Scheduler** — Refreshes every 15 minutes, logs all pipeline runs
-- **Historical Tracking** — Every fetch is stored, enabling price history analysis
+```
+CRYPTODASHBOARD/
+│
+├── alerts/
+│   ├── alert_engine.py          # Core alerting logic
+│   ├── email_alerts.py          # Email notification handler
+│   └── telegram_alert.py        # Telegram bot integration
+│
+├── analytics/
+│   ├── sentiment.py             # Sentiment analysis engine
+│   ├── sentiment_queries.py     # DB queries for sentiment data
+│   └── store_sentiment.py       # Sentiment storage handler
+│
+├── data/
+│   ├── crypto.db                # SQLite database (gitignored)
+│   └── pipeline.log             # Pipeline execution logs (gitignored)
+│
+├── ml/
+│   ├── train_model.py           # Model training script (XGBoost)
+│   ├── predict.py               # Prediction inference script
+│   └── crypto_prediction_model.pkl  # Trained model artifact (gitignored)
+│
+├── sql/
+│   ├── btc_dominance.sql        # BTC dominance analytics query
+│   └── market_overview.sql      # Market overview analytics query
+│
+├── screenshots/                 # Project screenshots
+├── fetch_data.py                # Main data fetching pipeline
+├── queries.py                   # Shared DB query utilities
+├── .env                         # Secret keys (gitignored)
+├── .gitignore
+└── README.md
+```
 
 ---
 
-## SQL Queries
+## 🛠️ Tech Stack
 
-All queries are in `/sql` folder. Key analyses:
-
-| Query | File | Description |
-|-------|------|-------------|
-| Top Gainers | `top_gainers.sql` | 24h best performers |
-| Volume/MCap | `volume_vs_marketcap.sql` | Trading activity ratio |
-| BTC Dominance | `btc_dominance.sql` | Market share analysis |
-| Volatility | `volatility_rank.sql` | Most volatile coins |
-| Overview | `market_overview.sql` | Summary statistics |
+| Layer | Tools |
+|---|---|
+| Language | Python 3.13 |
+| Database | SQLite |
+| ML (Experimental) | XGBoost, scikit-learn |
+| Alerts | Telegram Bot API, SMTP |
+| Analytics | SQL, Pandas |
+| Environment | python-dotenv |
 
 ---
 
-## How to Run
+## ⚙️ Setup & Installation
 
+### 1. Clone the repository
 ```bash
-# 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/crypto-market-intelligence-dashboard
-cd crypto-market-intelligence-dashboard
+git clone https://github.com/MrunalMarathe14/QuantPulse---Intelligent-CryptoDashboard.git
+cd QuantPulse---Intelligent-CryptoDashboard
+```
 
-# 2. Install dependencies
+### 2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-# 3. Fetch initial data
+### 3. Set up environment variables
+
+Create a `.env` file in the root directory:
+```
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+EMAIL_SENDER=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+EMAIL_RECEIVER=receiver@gmail.com
+```
+
+### 4. Run the data pipeline
+```bash
 python fetch_data.py
+```
 
-# 4. Launch dashboard
-streamlit run dashboard.py
-
-# 5. (Optional) Start auto-scheduler in a separate terminal
-python scheduler.py
+### 5. Start alerts
+```bash
+python alerts/alert_engine.py
 ```
 
 ---
 
-## Project Structure
+## 📈 ML Model (Work in Progress)
 
-```
-├── data/crypto.db          # SQLite database
-├── sql/                    # All SQL queries as .sql files
-├── fetch_data.py           # API → Database pipeline
-├── queries.py              # SQL query functions
-├── dashboard.py            # Streamlit dashboard
-├── scheduler.py            # 15-min auto-refresh
-└── requirements.txt
-```
+> ⚠️ The ML module is currently experimental and not production-ready.
+
+- **Algorithm:** XGBoost Regressor
+- **Status:** Prototype — model accuracy is still being improved
+- **Artifact:** `ml/crypto_prediction_model.pkl`
+
+### 🔮 Planned Enhancements
+- Feature engineering with OHLCV indicators and rolling averages
+- Hyperparameter tuning with cross-validation
+- LSTM / time-series models for better sequential prediction
+- Backtesting framework to evaluate prediction accuracy
 
 ---
 
-*Built as a portfolio project demonstrating end-to-end data pipeline skills: API integration, SQL analysis, Python data processing, and dashboard visualization.*
+## 🔔 Alert System
+
+Alerts are triggered based on configurable market conditions:
+- Price crossing a threshold
+- Unusual volume spikes
+- Sentiment shifts
+
+Notifications are sent via **Telegram** and **Email** simultaneously.
+
+---
+
+## 📊 SQL Dashboards
+
+| Query | Description |
+|---|---|
+| `btc_dominance.sql` | Tracks Bitcoin's market dominance over time |
+| `market_overview.sql` | Summarizes top coins by volume, price change, and cap |
+
+---
+
+## 🔒 Security
+
+- All API keys and credentials are stored in `.env` and never committed to version control
+- `.env` is listed in `.gitignore`
+
+---
+
+## 🙋‍♀️ Author
+
+**Mrunal Marathe**  
+B.Tech Computer Science | MIT World Peace University, Pune  
+[GitHub](https://github.com/MrunalMarathe14)
+
+---
+
+## 📄 License
+
+This project is for educational and portfolio purposes.
