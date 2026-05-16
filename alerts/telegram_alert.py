@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 
 import requests
 load_dotenv()
-BOT_TOKEN = "8968102799:AAFUg3qCRa7-WjK6xICUadq1WlfmHpxj0-I"
-CHAT_ID = "1188460670"
+BOT_TOKEN = "89681xxxxxxxxxxxx"
+CHAT_ID = "11xxxxxxxxxx"
 
 def send_telegram_alert(message):
 
